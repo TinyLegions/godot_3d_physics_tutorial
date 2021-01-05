@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://character.gd" type="Script" id=1]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="PhysicsMaterial" id=3]
+
+[sub_resource type="PlaneShape" id=4]
+
+[sub_resource type="PlaneMesh" id=5]
+size = Vector2( 40, 40 )
+
+[sub_resource type="CapsuleShape" id=6]
+
+[sub_resource type="CapsuleMesh" id=7]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="RigidBody" type="RigidBody" parent="."]
+transform = Transform( 0.875, -0.216506, 0.433013, 0.433013, 0.75, -0.5, -0.216506, 0.625, 0.75, 0, 5, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="RigidBody"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="RigidBody2" type="RigidBody" parent="."]
+mode = 1
+mass = 10.0
+physics_material_override = SubResource( 3 )
+gravity_scale = 2.0
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody2"]
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="RigidBody2"]
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 15, 15 )
+
+[node name="RigidBody3" type="RigidBody" parent="."]
+transform = Transform( 0.970645, 0.0150786, -0.240042, -0.225741, -0.287289, -0.930863, -0.0829974, 0.957725, -0.275452, 0, 5, 5 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody3"]
+shape = SubResource( 6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="RigidBody3"]
+mesh = SubResource( 7 )
+material/0 = null
+[connection signal="body_entered" from="RigidBody3" to="RigidBody3" method="_on_RigidBody3_body_entered"]
