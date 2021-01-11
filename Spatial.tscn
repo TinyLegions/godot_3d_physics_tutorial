@@ -46,7 +46,8 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 15, 15 )
 
 [node name="RigidBody3" type="RigidBody" parent="."]
-transform = Transform( 0.970645, 0.0150786, -0.240042, -0.225741, -0.287289, -0.930863, -0.0829974, 0.957725, -0.275452, 0, 5, 5 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 5, 5 )
+mode = 2
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="RigidBody3"]
