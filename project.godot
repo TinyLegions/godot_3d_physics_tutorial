@@ -19,6 +19,12 @@ config/name="Godot 3d Physics Tutorial 3"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/borderless=true
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

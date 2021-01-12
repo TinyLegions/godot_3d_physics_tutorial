@@ -30,10 +30,10 @@ func _integrate_forces(state):
 		add_force(Vector3.RIGHT*magnitude,global_transform.origin)
 #		add_central_force(Vector3.BACK*magnitude)
 	if Input.is_action_just_pressed("ui_accept"):
-		apply_impulse(global_transform.origin,Vector3.UP*magnitude)
+		apply_impulse(global_transform.origin,Vector3.UP*magnitude*.25)
 		
 
 
-func _on_RigidBody3_body_entered(body):
+func _on_Player_body_entered(body):
 	print(body)
 	pass # Replace with function body.
